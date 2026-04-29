@@ -1,0 +1,40 @@
+@font-face{font-family:'Albert Sans';font-style:normal;font-weight:300;font-display:swap;src:url('fonts/albert-sans-300.woff2') format('woff2')}
+@font-face{font-family:'Albert Sans';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/albert-sans-400.woff2') format('woff2')}
+@font-face{font-family:'Albert Sans';font-style:normal;font-weight:600;font-display:swap;src:url('fonts/albert-sans-600.woff2') format('woff2')}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#fafafa;--fg:#1d1d1f;--muted:#86868b;--link:#424245;--sans:'Albert Sans',system-ui,sans-serif}
+
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);min-height:100dvh;padding:clamp(2rem,5vw,4rem);font-weight:300;line-height:1.7;font-size:.95rem}
+
+.lang{position:fixed;top:clamp(1.5rem,3vw,2.5rem);right:clamp(2rem,5vw,4rem);display:flex;gap:.1rem;font-size:.65rem;letter-spacing:.04em;z-index:10}
+.lang a{font-family:var(--sans);font-size:.65rem;color:var(--muted);padding:.35rem .5rem;text-decoration:none;transition:color .2s;letter-spacing:.04em}
+.lang a:hover{color:var(--fg)}
+.lang a.active{color:var(--fg);font-weight:600}
+
+.wrap{max-width:680px;margin:0 auto;animation:up .6s cubic-bezier(.25,1,.5,1) both}
+@keyframes up{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+.brand{font-size:clamp(1.5rem,3.5vw,2rem);letter-spacing:-.04em;line-height:1;margin-bottom:.2em;text-decoration:none;color:var(--fg);display:inline-block}
+.brand b{font-weight:600}
+.brand span{font-weight:300;color:var(--muted)}
+.brand-legal{font-size:.7rem;color:var(--muted);letter-spacing:.08em;margin-bottom:clamp(2rem,4vw,3rem)}
+
+h1{font-size:1.6rem;font-weight:600;letter-spacing:-.02em;margin-bottom:2rem;line-height:1.2}
+h2{font-size:1rem;font-weight:600;margin-top:2.2rem;margin-bottom:.6rem;letter-spacing:-.005em}
+p{margin-bottom:.9rem}
+a{color:var(--link);text-decoration:none;border-bottom:1px solid rgba(0,0,0,.15);transition:border-color .2s,color .2s}
+a:hover{color:var(--fg);border-bottom-color:var(--fg)}
+.adresse{margin-bottom:.9rem}
+.adresse div{margin-bottom:.1rem}
+.note{font-size:.85rem;color:var(--muted);margin-top:.6rem;padding:.9rem 1.1rem;border-left:1.5px solid var(--fg);background:rgba(0,0,0,.02)}
+
+.foot{margin-top:4rem;padding-top:1.5rem;border-top:1px solid rgba(0,0,0,.08);display:flex;gap:1.5rem;font-size:.65rem;letter-spacing:.04em}
+.foot a{color:var(--muted);border:none}
+.foot a:hover{color:var(--fg)}
+
+@media(max-width:600px){
+  body{padding:2rem 1.5rem;padding-top:4rem}
+  .lang{top:1.2rem;right:1.5rem}
+  h1{font-size:1.4rem}
+}
